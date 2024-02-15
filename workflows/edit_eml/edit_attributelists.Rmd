@@ -69,7 +69,9 @@ attributes <- data.frame(
     missingValueCodeExplanation = c(NA, NA, NA,NA, NA, NA, NA, 'no sampling comments'))
 ```
 
-However, typing this out in R can be a major pain. Luckily, there's a Shiny app that you can use to build attribute information. You can use the app to build attributes from a data file loaded into R (recommended as the app will auto-fill some fields for you) to edit an existing attribute table, or to create attributes from scratch. Use the following commands to create or modify attributes (these commands will launch a Shiny app in your web browser):
+However, typing this out in R can be a major pain. Luckily, there's a Shiny app that you can use to build attribute information. You can use the app to build attributes from a data file loaded into R (recommended as the app will auto-fill some fields for you) to edit an existing attribute table, or to create attributes from scratch. Use the following commands to create or modify attributes. 
+
+These commands will launch a Shiny app in your web browser. Note that R cannot run other code when a Shiny app is open.
 
 ```{r, eval = FALSE}
 #first download the CSV in your data package from Exercise #2
@@ -89,7 +91,11 @@ EML::shiny_attributes(data = NULL, attributes = attributeList$attributes)
 atts <- EML::shiny_attributes()
 ```
 
-Once you are done editing a table in the app, quit the app and the tables will be assigned to the `atts` variable as a list of data frames (one for attributes, factors, and units). Alternatively, each table can be to exported to a csv file by clicking the `Download` button.
+Once you are done editing a table in the browser app, quit the app by pressing the red "Quit App" button in the top right corner of the page. 
+
+If you close the Shiny app tab in your browser instead of using the "Quit App" button, your work will not be saved, R will think that the Shiny app is still open, and you will not be able to run other code. You can tell if R is confused if you have closed the Shiny app and the bottom line in the console still says `Listening on http://...`. If this happens, press the red stop sign button on the right hand side of the console window in order to interrupt R.
+
+The tables you constructed in the app will be assigned to the `atts` variable as a list of data frames (one for attributes, factors, and units). Alternatively, each table can be to exported to a csv file by clicking the `Download` button.
 
 If you downloaded the table, read the table back into your R session and assign it to a variable in your script (e.g. `attributes <- data.frame(...)`), or just use the variable that `shiny_attributes` returned.
 

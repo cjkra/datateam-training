@@ -5,7 +5,9 @@ This chapter is a practical tutorial for using R to read, edit, write, and valid
 Most of the functions you will see in this chapter will use the `arcticdatautils` and `EML` packages.
 
 ```{block, type = "note"}
-This chapter will be longest of all the sections! This is a reminder to take frequent breaks when completing this section.
+This chapter will be longest of all the sections! This is a reminder to take frequent breaks when completing this section. 
+
+If you struggle with getting a piece of code to work for over 5 minutes, reach out to your supervisor for help.
 ```
 
 ```{r, child = '../workflows/edit_eml/edit_an_eml_element.Rmd'}
